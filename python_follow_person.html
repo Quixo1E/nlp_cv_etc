@@ -32,16 +32,21 @@
         <li>Other custom modules such as <code>modules</code>.</li>
     </ul>
 
-    <h2>Functions and Descriptions</h2>
-    <h3>cal()</h3>
-    <p>This function initializes the ZED camera, sets configuration parameters, and captures images and depth for a defined number of frames. It's used for calibrating the camera.</p>
+    <h2>Main Functions</h2>
+    <h3>zed.grab()</h3>
+    <p>executes the network detector on the video stream. Nested in a while loop for continuous deployment.</p>
+    <h3>main_detection</h3>
+    <p>This is the stored detection model passed to the camera. The defaults in the script is the YOLOv5 lite model with the PERSON_HEAD categorizer (see lines 87). This network can be changed to a custom network provided the path.</p>
+    <h3>obj_array[]</h3>
+    <p>Contains the set of identified objects from the network. obj_array[0].position returns the xyz coordinates of the first waypoint and then passes those to the AirSim client movement module methods.</p>
+    <h3>client.RotateToYawAsSync() + client.moveByVelocityAsync()</h3>
+    <p>see modules doc</p>
 
-    <!-- More function descriptions can be added here -->
+
 
     <h2>Script Execution</h2>
-    <p>The script executes a series of operations to initialize the camera, capture images, process them, and perform specific tasks like following a person. Detailed operation descriptions and flow can be provided based on the full script content.</p>
+    <p>T</p>
 
-    <!-- Additional sections can be added here for algorithms, data structures, or specific methodologies used in the script -->
 
     <h2>Conclusion</h2>
     <p>This document provides an overview of the <code>follow_person_airsim.py</code> script, outlining its main components and functionality. For a detailed understanding, reviewing the script's source code alongside this documentation is recommended.</p>
