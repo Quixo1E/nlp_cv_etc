@@ -29,7 +29,7 @@
     <h3>obj_array[]</h3>
     <p>Contains the set of identified objects from the network. obj_array[0].position returns the xyz coordinates of the first waypoint and then passes those to the AirSim client movement module methods.</p>
     <h3>client.RotateToYawAsSync() + client.moveByVelocityAsync()</h3>
-    <p>see modules doc</p>
+    <p>Main movement controls of the drone, modified by the position value. see modules doc for further description of the methods.</p>
     <h3>waypoints[]</h3>
     <p>Stores the desired yaw rotations for each consecutive waypoint. Requires the client's input to determine proper drrone navigation of a path (see lines 153-155</p>
 
