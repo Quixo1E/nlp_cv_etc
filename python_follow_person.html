@@ -21,31 +21,21 @@
     <p>Once an object is detected, it's distance from the camera, as well as its required yaw angle from center are both calculated. Then the drone passes those parameters to the drone movement methods in modules.py to commence movement. </p>
     <p>Depending on the path planned for the drone, you will need to provide movement context per each waypoint for the drone to navigate. There is a sample for such a feature commented out in lines 130</p>
 
-    <h2>Imports</h2>
-    <p>The script uses the following Python modules:</p>
-    <ul>
-        <li><code>pyzed.sl</code> - ZED SDK for depth sensing and spatial mapping.</li>
-        <li><code>cv2</code> - OpenCV for image processing.</li>
-        <li><code>numpy</code> - Numerical operations on arrays.</li>
-        <li><code>math</code> - Mathematical functions.</li>
-        <li><code>timeit</code>, <code>time</code> - Measure execution time and delays.</li>
-        <li>Other custom modules such as <code>modules</code>.</li>
-    </ul>
-
-    <h2>Main Functions</h2>
+    <h2>Main Functions and Data Fields</h2>
     <h3>zed.grab()</h3>
     <p>executes the network detector on the video stream. Nested in a while loop for continuous deployment.</p>
     <h3>main_detection</h3>
-    <p>This is the stored detection model passed to the camera. The defaults in the script is the YOLOv5 lite model with the PERSON_HEAD categorizer (see lines 87). This network can be changed to a custom network provided the path.</p>
+    <p>This is the stored detection model passed to the camera. The defaults in the script is the YOLOv5 lite model with the PERSON_HEAD categorizer (see lines 87). This network can be changed to a custom network provided the path (see line 88).</p>
     <h3>obj_array[]</h3>
     <p>Contains the set of identified objects from the network. obj_array[0].position returns the xyz coordinates of the first waypoint and then passes those to the AirSim client movement module methods.</p>
     <h3>client.RotateToYawAsSync() + client.moveByVelocityAsync()</h3>
     <p>see modules doc</p>
-
+    <h3>waypoints[]</h3>
+    <p>Stores the desired yaw rotations for each consecutive waypoint. Requires the client's input to determine proper drrone navigation of a path (see lines 153-155</p>
 
 
     <h2>Script Execution</h2>
-    <p>T</p>
+    <p></p>
 
 
     <h2>Conclusion</h2>
