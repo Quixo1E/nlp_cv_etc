@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>follow_path_airsim.py Documentation</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        h1, h2 { color: #333; }
+        p, li { color: #555; }
+        code { background-color: #f4f4f4; padding: 2px 6px; }
+        .method { background-color: #eef; padding: 10px; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+<h1>follow_path_airsim.py Documentation</h1>
+
+<p>This document provides the code documentation for <code>follow_path_airsim.py</code>, a script for controlling a drone to follow a predefined path in the AirSim simulation environment. The script sets up a connection with AirSim and listens for trajectory updates to guide the drone.</p>
+
+<div class="method">
+    <h2>Global Variables</h2>
+    <ul>
+        <li><code>velocity</code>: A float variable that defines the speed at which the drone should move along the path.</li>
+    </ul>
+</div>
+
+<div class="method">
+    <h2>Initial Setup</h2>
+    <p>The script initializes a connection with the AirSim simulator, enabling API control over the drone.</p>
+</div>
+
+<div class="method">
+    <h2>trajectory_callback(spline_marker_array_msg)</h2>
+    <p><strong>Description:</strong> Callback function that is triggered upon receiving a trajectory update. It processes the trajectory points and commands the drone to move along the path.</p>
+    <p><strong>Parameters:</strong></p>
+    <ul>
+        <li><code>spline_marker_array_msg</code>: A ROS message containing the trajectory information represented as a series of markers.</li>
+    </ul>
+    <p><strong>Functionality:</strong></p>
+    <ul>
+        <li>Extracts the last published trajectory from the message.</li>
+        <li>Converts the trajectory points into a format suitable for AirSim commands.</li>
+        <li>Commands the drone to move along the extracted path at the defined velocity.</li>
+    </ul>
+</div>
+
+<!-- Add additional method sections here as necessary -->
+
+</body>
+</html>
