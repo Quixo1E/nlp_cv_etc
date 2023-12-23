@@ -1,1 +1,75 @@
-<h1>Hello</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Documentation</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        h1, h2, h3 { color: #333; }
+        ul, ol { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+        code { background-color: #f5f5f5; padding: 2px 5px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h1>Project Documentation</h1>
+    <p>This document provides an overview of the functionalities, key methods, and data fields for each script in the project.</p>
+
+    <h2>General Requirements</h2>
+    <ol>
+        <li>A conda environment based upon the libraries listed in environment.yml</li>
+        <li>AirSim installed (from Colosseum), running on Unreal Engine (UE).</li>
+        <li>ZED SDK installed.</li>
+    </ol>
+
+    <h2>Scripts Overview</h2>
+
+    <section>
+        <h3>follow_person_airsim.py</h3>
+        <p>Connects the ZED camera on a laptop to an AirSim client. It employs a human detector network, captures the first person, reads the distance, and targets the drone to move toward that distance in meters.</p>
+        <h4>Key Methods</h4>
+        <ul>
+            <li><code>connectToDrone()</code>: Establishes connection with the drone.</li>
+            <li><code>findPerson()</code>: Detects and captures the first person using ZED's human detection.</li>
+            <li><code>moveDrone()</code>: Moves the drone towards the detected person.</li>
+        </ul>
+        <h4>Data Fields</h4>
+        <ul>
+            <li><code>client</code>: AirSim client object.</li>
+            <li><code>person_location</code>: Coordinates of the detected person.</li>
+            <li><code>drone_position</code>: Current position of the drone.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>airsim_toROS.py</h3>
+        <p>Converts the AirSim API to ROS interpretable commands. It's designed to facilitate communication between AirSim and ROS for extended functionalities.</p>
+        <h4>Key Methods</h4>
+        <ul>
+            <li><code>apiToRos()</code>: Converts AirSim API commands to ROS messages.</li>
+            <li><code>rosSubscriber()</code>: Subscribes to relevant ROS topics.</li>
+            <li><code>sendCommands()</code>: Sends converted commands to the drone.</li>
+        </ul>
+        <h4>Data Fields</h4>
+        <ul>
+            <li><code>api_commands</code>: Commands received from AirSim API.</li>
+            <li><code>ros_messages</code>: ROS messages to be published.</li>
+            <li><code>current_state</code>: Current state of the drone.</li>
+        </ul>
+    </section>
+
+    <!-- Repeat the structure for each script -->
+
+    <h2>Additional Resources</h2>
+    <ul>
+        <li>Installation video for Unreal Engine: <a href="https://www.youtube.com/watch?v=8xJRr6Yr_LU">https://www.youtube.com/watch?v=8xJRr6Yr_LU</a></li>
+        <li>AirSim on GitHub (Colosseum): <a href="https://github.com/CodexLabsLLC/Colosseum">https://github.com/CodexLabsLLC/Colosseum</a></li>
+        <li>AirSim official documentation: <a href="https://microsoft.github.io/AirSim/build_windows/">https://microsoft.github.io/AirSim/build_windows/</a></li>
+        <li>Building AirSim in UE tutorial: <a href="https://www.youtube.com/watch?v=1oY8Qu5maQQ&t=1s">https://www.youtube.com/watch?v=1oY8Qu5maQQ&t=1s</a></li>
+    </ul>
+
+    <p>Note: The methods and data fields mentioned are placeholders and should be replaced with actual details from the scripts.</p>
+</body>
+</html>
