@@ -14,7 +14,7 @@
 
 <h1>follow_path_airsim.py Documentation</h1>
 
-<p>This document provides the code documentation for <code>follow_path_airsim.py</code>, a script for controlling a drone to follow a predefined path in the AirSim simulation environment. The script sets up a connection with AirSim and listens for trajectory updates to guide the drone.</p>
+<p>This document provides the code documentation for <code>follow_path_airsim.py</code>, a script for controlling a drone to follow a predefined path in the AirSim simulation environment using ROS.</p>
 
 <div class="method">
     <h2>Global Variables</h2>
@@ -25,7 +25,7 @@
 
 <div class="method">
     <h2>Initial Setup</h2>
-    <p>The script initializes a connection with the AirSim simulator, enabling API control over the drone.</p>
+    <p>Establishes a connection with the AirSim simulator, enabling API control over the drone.</p>
 </div>
 
 <div class="method">
@@ -40,10 +40,26 @@
         <li>Extracts the last published trajectory from the message.</li>
         <li>Converts the trajectory points into a format suitable for AirSim commands.</li>
         <li>Commands the drone to move along the extracted path at the defined velocity.</li>
+        <li>Disables API control after completing the movement.</li>
     </ul>
 </div>
 
-<!-- Add additional method sections here as necessary -->
+<div class="method">
+    <h2>airsim_follow()</h2>
+    <p><strong>Description:</strong> Sets up the ROS node, initializes the velocity parameter, subscribes to the trajectory topic, and listens for messages to dictate the drone's path.</p>
+    <p><strong>Functionality:</strong></p>
+    <ul>
+        <li>Initializes the ROS node named 'airsim_follow_trajectory'.</li>
+        <li>Sets the global velocity parameter based on ROS parameters or defaults to 0.5.</li>
+        <li>Subscribes to the "/trajectory/spline_marker_array" topic to receive trajectory updates.</li>
+        <li>Enters a loop to keep the script running and responsive to incoming messages.</li>
+    </ul>
+</div>
+
+<div class="method">
+    <h2>Main Section</h2>
+    <p><strong>Description:</strong> The entry point of the script which calls the <code>airsim_follow()</code> function to start the process.</p>
+</div>
 
 </body>
 </html>
