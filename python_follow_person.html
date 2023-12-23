@@ -13,11 +13,13 @@
     </style>
 </head>
 <body>
-    <h1>Documentation for follow_person_airsim.py</h1>
+    <h1>follow_person_airsim.py</h1>
     <p>This document outlines the structure and functionality of the Python script <code>follow_person_airsim.py</code>.</p>
 
     <h2>Overview</h2>
-    <p>This script is designed to control a drone or camera to follow a person using the ZED Stereo Camera for depth and image capture.</p>
+    <p>This is the main proof of concept script for our autonomous flight. The program initializes a drone takeoff, then triggers a object detection loop via the Zed SDK. </p>
+    <p>Once an object is detected, it's distance from the camera, as well as its required yaw angle from center are both calculated. Then the drone passes those parameters to the drone movement methods in modules.py to commence movement. </p>
+    <p>Depending on the path planned for the drone, you will need to provide movement context per each waypoint for the drone to navigate. There is a sample for such a feature commented out in lines 130</p>
 
     <h2>Imports</h2>
     <p>The script uses the following Python modules:</p>
