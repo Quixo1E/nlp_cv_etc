@@ -52,22 +52,22 @@
 
 <div class="file-section">
     <h2><a href="path/to/follow_person_airsim.py">follow_person_airsim.py</a></h2>
-    <p>Connects the ZED camera on a laptop to an AirSim client. It employs a human detector network to capture the first person, reads the distance, and then directs the drone to move towards that distance in meters. The y-axis is fixed in this demo to prevent descending towards the ground. For additional instructions, see line 126.</p>
+    <p>Connects the ZED camera on a laptop to an AirSim client. It employs an object detector network with a single detection category as humans, then captures the first person, reads the distance, and then directs the drone to move towards that distance in meters. The y-axis is fixed in this demo to prevent descending towards the ground. For additional instructions, see line 126.</p>
 </div>
 
-<div class="file-section">
+<!--<div class="file-section">
     <h2><a href="path/to/follow_point_airsim.py">follow_point_airsim.py</a></h2>
     <p>Description pending. (Placeholder for additional details)</p>
-</div>
+</div> -->
 
 <div class="file-section">
     <h2><a href="path/to/airsim_toROS.py">airsim_toROS.py</a></h2>
-    <p>This module converts the AirSim API to ROS interpretable commands. **TO DO**: Create a ROS node in follow_person_airsim.py that interprets the ROS code to incorporate communication between other flight modules needed for real-world flight (can simulate the flight modules as well).</p>
+    <p>This module converts the AirSim API to ROS interpretable commands.</p>
 </div>
 
 <div class="file-section">
     <h2><a href="path/to/follow_path_airsim.py">follow_path_airsim.py</a></h2>
-    <p>Experimental code for... (Additional description needed).</p>
+    <p>Experimental code for interpreting a predefined map for the AirSim drone to follow.</p>
 </div>
 
 <div class="file-section">
